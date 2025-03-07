@@ -24,7 +24,6 @@ const Game = () => {
     const consonants = 'BCDFGHJKLMNPQRSTVWXYZ';
     let generatedLetters = [];
 
-    
     for (let i = 0; i < 3; i++) {
       generatedLetters.push(vowels[Math.floor(Math.random() * vowels.length)]);
     }
@@ -45,9 +44,8 @@ const Game = () => {
   };
 
   const handleWordSubmission = (word) => {
-    
     if (word.length < 3 || word.length > 5) {
-      setMessage('Думата трябва да е между 3 и 5 букви.');
+      setMessage('The word must be between 3 and 5 letters.');
       return;
     }
     
@@ -55,7 +53,7 @@ const Game = () => {
       setValidWords((prevWords) => [...prevWords, word]);
       setMessage('');
     } else {
-      setMessage('Невалидна дума! Опитайте отново.');
+      setMessage('Invalid word! Try again.');
     }
   };
 
@@ -84,17 +82,21 @@ const Game = () => {
   };
 
   return (
-    <div>
-      <h1>Words Countdown</h1>
-      <button onClick={startGame}>Нова игра</button>
+    <div className='mainDiv'>
+      <h1 className='h1'>Words Countdown</h1>
+      <button onClick={startGame}>New Game</button>
       {isGameActive && (
         <>
           <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} />
-          <div>Букви: {letters.join(' ')}</div>
+          <div className="letters">
+            Letters: {letters.map((letter, index) => (
+              <span key={index}>{letter}</span>
+            ))}
+          </div>
           <WordInput letters={letters} onWordSubmit={handleWordSubmission} />
-          {message && <p>{message}</p>} {/* Показва съобщение за грешка */}
-          <div>
-            <h3>Вашите валидни думи:</h3>
+          {message && <p>{message}</p>} 
+          <div className="validWords">
+            <h3>Your valid words:</h3>
             <ul>
               {validWords.map((word, index) => (
                 <li key={index}>{word}</li>
@@ -104,8 +106,8 @@ const Game = () => {
         </>
       )}
       {timeLeft === 0 && (
-        <div>
-          <h2>Възможни думи:</h2>
+        <div className="possibleWords">
+          <h2>Possible words:</h2>
           <ul>
             {validWords.map((word, index) => (
               <li key={index}>{word}</li>

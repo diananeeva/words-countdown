@@ -1,1 +1,122 @@
-
+/* Основен стил за контейнера */
+.mainDiv {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  
+  .h1 {
+    font-family: 'Georgia', serif;
+    font-size: 36px;
+    color: #6f4f2f; 
+  }
+  
+  
+  button {
+    padding: 10px 20px;
+    margin-left:30px;
+    font-size: 18px;
+    background-color: #d2691e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #a0522d;
+  }
+  
+  
+  .letters {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .letters span {
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bold;
+    color: #6f4f2f;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f5f5dc;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .letters span:hover {
+    transform: scale(1.2);
+    color: #d2691e;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  p {
+    color: red;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  
+  .validWords h3 {
+    font-size: 24px;
+    font-family: 'Georgia', serif;
+    color: #2f4f4f; 
+    margin-bottom: 10px;
+  }
+  
+  .validWords ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .validWords ul li {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5px 0;
+    color: #6f4f2f;
+  }
+  
+  .possibleWords h2 ,.h2-timer {
+    font-size: 26px;
+    font-family: 'Georgia', serif;
+    color: #8b4513; 
+    margin-bottom: 10px;
+  }
+  
+  .possibleWords ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .possibleWords ul li {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5px 0;
+    color: #6f4f2f;
+  }
+  .timer {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #8a880b;
+    transition: width 1s ease;
+  }
+  

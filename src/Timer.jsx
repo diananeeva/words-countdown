@@ -10,7 +10,17 @@ const Timer = ({ timeLeft, setTimeLeft }) => {
     }
   }, [timeLeft, setTimeLeft]);
 
-  return <h2>Оставащо време: {timeLeft} секунди</h2>;
+  return (
+    <div className="timer">
+      <h2 className='h2-timer'>Time remaining: {timeLeft} seconds</h2>
+      <div className="progress-bar">
+        <div 
+          className="progress" 
+          style={{ width: `${(timeLeft / 30) * 100}%` }}
+        ></div>
+      </div>
+    </div>
+  );
 };
 
 export default Timer;

@@ -16,9 +16,9 @@ const WordInput = ({ letters, onWordSubmit }) => {
           type="text"
           value={word}
           onChange={(e) => setWord(e.target.value)}
-          placeholder="Въведете дума (до 5 букви)"
+          placeholder="Enter a word (up to 5 letters)"
         />
-        <button type="submit">Потвърди</button>
+        <button type="submit">Confirm</button>
       </form>
     </div>
   );
