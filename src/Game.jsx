@@ -4,19 +4,21 @@ import WordInput from './WordInput';
 
 const Game = () => {
   const [letters, setLetters] = useState([]);
-  const [timeLeft, setTimeLeft] = useState(30);
+  const [timeLeft, setTimeLeft] = useState(20);
   const [isGameActive, setIsGameActive] = useState(false);
   const [allWords, setAllWords] = useState([]);
   const [validWords, setValidWords] = useState([]);
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetch('/words.txt')
-      .then((response) => response.text())
-      .then((data) => {
-        const words = data.split('\n').map(word => word.trim().toLowerCase());
-        setAllWords(words);
-      });
+    fetch('/words-countdown/words.txt')
+    .then((response) => response.text())
+    .then((data) => {
+      const words = data.split('\n').map(word => word.trim().toLowerCase());
+      setAllWords(words);
+    })
+    .catch((error) => console.error('Error loading words:', error));
+  
   }, []);
 
   const generateLetters = () => {
@@ -24,11 +26,11 @@ const Game = () => {
     const consonants = 'BCDFGHJKLMNPQRSTVWXYZ';
     let generatedLetters = [];
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       generatedLetters.push(vowels[Math.floor(Math.random() * vowels.length)]);
     }
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
       generatedLetters.push(consonants[Math.floor(Math.random() * consonants.length)]);
     }
 
@@ -37,7 +39,7 @@ const Game = () => {
 
   const startGame = () => {
     generateLetters();
-    setTimeLeft(30);
+    setTimeLeft(20);
     setIsGameActive(true);
     setValidWords([]);
     setMessage('');

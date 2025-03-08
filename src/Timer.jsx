@@ -7,6 +7,8 @@ const Timer = ({ timeLeft, setTimeLeft }) => {
         setTimeLeft((prev) => prev - 1);
       }, 1000);
       return () => clearInterval(timer);
+    } else {
+      setTimeLeft(0);
     }
   }, [timeLeft, setTimeLeft]);
 
@@ -16,7 +18,7 @@ const Timer = ({ timeLeft, setTimeLeft }) => {
       <div className="progress-bar">
         <div 
           className="progress" 
-          style={{ width: `${(timeLeft / 30) * 100}%` }}
+          style={{ width: `${(timeLeft / 20) * 100}%` }}
         ></div>
       </div>
     </div>
@@ -24,3 +26,4 @@ const Timer = ({ timeLeft, setTimeLeft }) => {
 };
 
 export default Timer;
+
